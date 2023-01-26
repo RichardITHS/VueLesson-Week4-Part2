@@ -25,14 +25,24 @@ const router = VueRouter.createRouter({
 
 /* Creating my states(information that will be available everywhere) */
 const state = {
-    someValue: 'Nu har vi ett state som inhämtas till about sidan',
-    someOtherValue: 'Kolla det funkar överallt, jippie!!!'
+  counter:0
+}
+/* Creating mutation (change original state value) */
+/* const mutations = {
+    increment(state){
+        state.counter += 1
+    }
+} */
+
+/* Adding some type of info when we do an mutation */
+const mutations = {
+    increment(state, whatEver){
+        state.counter += whatEver
+    }
 }
 
-
-
 /* Implementing the vuex "functionality in the app" */
-const store = Vuex.createStore({state})
+const store = Vuex.createStore({state, mutations})
 
 /* We are using a middleware to tell the app that we want to use Router 
 term 'use' */

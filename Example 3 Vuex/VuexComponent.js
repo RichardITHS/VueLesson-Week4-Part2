@@ -2,8 +2,10 @@ const VuexComponent = Vue.createApp({})
 
 VuexComponent.component('vuex-component', {
     template: `
-    <h2>Nu använder vi oss av en komponent som också hämtar informationen</h2>
-    <div>{{$store.state.someOtherValue}}</div>
+    <input
+    @click="$store.commit('increment', 20)"
+    type="button"
+    :value="$store.state.counter">
     `
 })
 VuexComponent.use(store)
