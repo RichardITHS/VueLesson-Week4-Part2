@@ -25,7 +25,7 @@ const router = VueRouter.createRouter({
 
 /* Creating my states(information that will be available everywhere) */
 const state = {
-    someValue: 'This is someValue',
+    someValue: 'Nu har vi ett state som inhämtas till about sidan',
     someOtherValue: 'This is someOtherValue'
 }
 
@@ -37,4 +37,7 @@ const store = Vuex.createStore({state})
 /* We are using a middleware to tell the app that we want to use Router 
 term 'use' */
 app.use(router)
+/* We are using a middleware to tell the app that we want to use Vuex 
+term 'use' */
+app.use(store)
 app.mount('#app')
